@@ -53,7 +53,7 @@ const Navbar = () => {
             <span className="text-white font-semibold text-xl">BS</span>
           </div>
           <span className="font-bold text-xl sm:text-2xl text-navy-dark">
-            Ballot Safari
+             VOTE CHAIN
           </span>
         </Link>
 
