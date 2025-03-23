@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Vote from "./pages/Vote";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/login" element={<Login />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/vote/:id" element={<Vote />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatedTransition>

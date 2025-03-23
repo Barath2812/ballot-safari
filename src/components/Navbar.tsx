@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, LogOut } from 'lucide-react';
+import { Menu, X, LogOut, Shield } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +29,7 @@ const Navbar = () => {
     { name: 'Home', path: '/', showWhen: 'always' },
     { name: 'Login', path: '/login', showWhen: 'loggedOut' },
     { name: 'Dashboard', path: '/dashboard', showWhen: 'loggedIn' },
+    { name: 'Admin', path: '/admin', showWhen: 'loggedIn', icon: Shield },
   ];
 
   const filteredLinks = navLinks.filter(link => {
@@ -63,10 +64,11 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`font-medium px-2 py-1 text-navy hover:text-primary transition-colors relative ${
+              className={`font-medium px-2 py-1 text-navy hover:text-primary transition-colors relative flex items-center ${
                 location.pathname === link.path ? 'text-primary' : ''
               }`}
             >
+              {link.icon && <link.icon className="h-4 w-4 mr-1" />}
               {link.name}
               {location.pathname === link.path && (
                 <motion.div
@@ -116,12 +118,13 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block px-3 py-2 rounded-lg font-medium ${
+                className={`flex items-center px-3 py-2 rounded-lg font-medium ${
                   location.pathname === link.path 
                     ? 'bg-primary/10 text-primary' 
                     : 'text-navy hover:bg-gray-50'
                 }`}
               >
+                {link.icon && <link.icon className="h-4 w-4 mr-2" />}
                 {link.name}
               </Link>
             ))}
