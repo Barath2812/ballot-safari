@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -79,7 +78,7 @@ const Admin = () => {
     toast.info('Create election functionality will be implemented soon!');
   };
 
-  const getStatusVariant = (status: string): StatusVariant => {
+  const getStatusVariant = (status: string): "default" | "secondary" | "destructive" | "outline" | "success" => {
     switch (status) {
       case 'active': return 'success';
       case 'scheduled': return 'warning';
